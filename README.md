@@ -1,4 +1,4 @@
-
+Authors: Alexandar Kraunsøe, Christian Lind, David Blum S., Kasper Pagh & Marco S. Blum.
 # disAss_4
 
 <br> run tester.js to try the methods (random generated 1000 log files)
