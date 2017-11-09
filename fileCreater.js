@@ -1,9 +1,9 @@
 var fs = require('fs');
 
-var level = ["Information","Warning","Error"];
-var id = [0,1,2,3,4];
-var instance = [0,1,2,3,4];
-var action = [0,1,2,3];
+//var level = ["Information","Warning","Error"];
+var id = [0,1,2,3];
+var instance = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19];
+var action = ["login","logout","create post","comment","upvote","downvote"];
 /*
 level Information, Warning, Error
 system System id
@@ -16,15 +16,17 @@ for (var i = 0; i < 1000; i++) {
     var date = new Date();
     date.setHours(date.getHours()+i);
     var temp= {
-      level:level[Math.floor(Math.random()*3)],
-      system_id:id[Math.floor(Math.random()*5)],
-      instance_id:instance[Math.floor(Math.random()*5)],
-      action_id:action[Math.floor(Math.random()*4)],
+      system_id: id[Math.floor(Math.random() * id.length)],
+      instance_id: instance[Math.floor(Math.random()*instance.length)],
+      action_id: action[Math.floor(Math.random()*action.length)],
       timestamp: date,
 
   }
+  if(i != 999){
   txt += JSON.stringify(temp) + "\n"
-    
+  }else{
+    txt += JSON.stringify(temp)
+  }
 }
 
 fs.writeFile("./log.txt", txt, function(err) {
